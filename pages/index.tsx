@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRef, useState, useEffect, useCallback, useMemo, memo } from 'react'
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink, ChevronDown, Globe, Star, Code, Sparkles, BookOpen, MessageCircle } from 'lucide-react'
 import { ThemeToggle } from '../components/ThemeToggle'
@@ -345,13 +346,13 @@ export default function Home() {
                   className="w-72 h-72 bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700 rounded-full flex items-center justify-center relative z-10 will-change-transform"
                 >
                   <div className="w-64 h-64 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center relative overflow-hidden shadow-inner">
-                    <motion.div 
-                      animate={{ rotate: [0, 5, 0, -5, 0] }}
-                      transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                      className="text-6xl"
-                    >
-                      👩‍🎓
-                    </motion.div>
+                    <Image 
+                      src="/images/karina.jpg" 
+                      alt="Profile Image"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                     
                     {/* Modern glow effect */}
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-10"></div>
